@@ -20,15 +20,15 @@ window.addEventListener('load', () => {
 }, false);
 
 function postForm() {
-	let jqxhr = $.post("/survey", $( "#survey" ).serialize())
+	$.post("/survey", $( "#survey" ).serialize())
 		.done(function () {
-			$("error-container").hide();
+			$("#error-container").hide();
 			$("#survey-container").slideUp(200, () => {
 				$("#thanks-container").slideDown(200);
 			});
 		})
 		.fail(function (e) {
-			console.log('fail', e);
-			$("error-container").show();
+			console.log('fail');
+			$("#error-container").show();
 		});
 }

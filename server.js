@@ -22,7 +22,7 @@ app.post('/survey', async (req, res) => {
 	console.log('received form data: ', req.body);
 
 	if (process.env.ENABLED !== 'true') {
-		res.status(503).json({msg: 'site disabled'});
+		return res.status(503).json({msg: 'site disabled'});
 	}
 
 	let email = {
