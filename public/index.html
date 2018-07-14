@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Survey</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+	    crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+	    crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h1 class="display-4">
+				<i class="fas fa-list-alt"></i> Survey header</h1>
+			<p class="lead">Here's where you can write some text. Lorem Ipsum...</p>
+		</div>
+	</div>
+
+	<div id="error-container" style="display: none;">
+		<div class="container">
+			<div class="row">
+				<div class="alert alert-danger fade show" role="alert">
+					Something went wrong while submitting your form responses. Please try again.
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="thanks-container" style="padding: 2em 0; background-color:lightgreen; display: none;">
+		<div class="container">
+			<div class="row">
+				<h2>
+					<i class="fas fa-thumbs-up"></i> Thank You!</h2>
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit possimus nostrum quia provident aliquid laborum illum
+					dolorem rerum velit, fugit accusantium quisquam, dolores ea totam blanditiis, modi tempora voluptate obcaecati.</p>
+				<p>Additionally, follow me
+					<a href="https://twitter.com/vkkokko">
+						<i class="fab fa-twitter"></i>Vkkokko</a>.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="survey-container">
+		<div class="row">
+			<div class="col">
+				<form id="survey" class="needs-validation" novalidate>
+
+					<div class="form-group">
+
+						<table class="table table-striped">
+							<thead class="thead-light">
+								<tr>
+									<th scope="col">Questions</th>
+									<th scope="col"></th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Here's a question that you can ask people?</td>
+									<td>
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="question1" id="q1y" value="yes" required aria-label="answer yes">
+											<label class="form-check-label" for="q1y">Yes</label>
+										</div>
+
+									</td>
+									<td>
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="question1" id="q1n" value="no" required aria-label="answer no">
+											<label class="form-check-label" for="q1n">No</label>
+										</div>
+
+									</td>
+								</tr>
+								<tr>
+									<td>Another question goes in here, lolol</td>
+									<td>
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="question2" id="q2y" value="yes" required aria-label="answer yes">
+											<label class="form-check-label" for="q2y">Yes</label>
+										</div>
+
+									</td>
+									<td>
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="question2" id="q2n" value="no" required aria-label="answer no">
+											<label class="form-check-label" for="q2n">No</label>
+										</div>
+
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Remember to update the name property of answers?
+									</td>
+									<td>
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="question3" id="q3y" value="yes" required aria-label="answer yes">
+											<label class="form-check-label" for="q3y">Yes</label>
+										</div>
+
+									</td>
+									<td>
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="question3" id="q3n" value="no" required aria-label="answer no">
+											<label class="form-check-label" for="q3n">No</label>
+										</div>
+
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="form-group">
+						<label for="feedback-textarea">Feedback</label>
+						<small>Here you can put in generic text as a helper</small>
+						<textarea class="form-control" id="feedback-textarea" rows="3" required name="feedback-text"></textarea>
+						<div class="invalid-feedback">Please provide some feedback related to your questions.</div>
+					</div>
+
+					<div class="form-group">
+						<button class="btn btn-primary" type="submit">
+							<i class="fas fa-cloud-upload-alt"></i> Submit answers</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- scripts -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+	    crossorigin="anonymous"></script>
+	<script src="js/script.js" async defer></script>
+</body>
+
+</html>
