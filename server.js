@@ -21,6 +21,10 @@ app.use(bodyParser.json());
 app.post('/survey', async (req, res) => {
 	console.log('received form data: ', req.body);
 
+	if (process.env.ENABLED !== 'true') {
+		res.status(503).json({msg: 'site disabled'});
+	}
+
 	let email = {
 		from: process.env.MAILGUN_FROM_EMAIL,
 		to: process.env.MAILGUN_TARGET_EMAIL,
