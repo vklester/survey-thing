@@ -15,8 +15,15 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }));
 
-app.use(express.static(path.resolve('./public')));
 app.use(bodyParser.json());
+
+app.use(express.static(path.resolve('./public')));
+app.use('/assets', [
+	express.static(path.resolve('./node_modules/popper.js/dist')),
+	express.static(path.resolve('./node_modules/bootstrap/dist')),
+	express.static(path.resolve('./node_modules/font-awesome')),
+	express.static(path.resolve('./node_modules/jquery/dist')),
+]);
 
 app.post('/survey', async (req, res) => {
 	console.log('received form data: ', req.body);
